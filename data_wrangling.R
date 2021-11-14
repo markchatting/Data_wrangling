@@ -1,6 +1,6 @@
 setwd("d:\\Users\\mc15243\\Desktop")
 
-file <- read.csv("Copy of Species Project.csv", header = T, sep = ",")
+file <- read.csv("Copy of Species Project.csv", header=T, sep=",")
 
 #str(file)
 file$Stations <- as.character(file$Stations)
@@ -9,7 +9,7 @@ df2 <- file
 
 txt <- c("KINGDOM", "PHYLUM", "MAGNOLIOPHYTA ", "CLASS", "ORDER", "FAMILY")
 for (i in 1:length(txt)){
-	df2 <- df2[grep(txt[i], df2$Stations, invert = TRUE), ]
+	df2 <- df2[grep(txt[i], df2$Stations, invert=TRUE), ]
 }
 
 str(df2)
@@ -17,7 +17,7 @@ str(df2)
 
 txt <- c("KINGDOM", "PHYLUM", "MAGNOLIOPHYTA ", "CLASS", "ORDER", "FAMILY")
 for (i in 1:length(txt)){
-	outdf <- file[grep(txt[i], file$Stations, invert = FALSE), ]
+	outdf <- file[grep(txt[i], file$Stations, invert=FALSE), ]
 }
 
 str(outdf)
