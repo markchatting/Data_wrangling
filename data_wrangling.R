@@ -1,8 +1,9 @@
+library(stringr)
+
 setwd("d:\\Users\\mc15243\\Desktop")
 
 file <- read.csv("Copy of Species Project.csv", header=T, sep=",")
 
-#str(file)
 file$Stations <- as.character(file$Stations)
 
 df2 <- file
@@ -43,10 +44,8 @@ sites <- extract_numeric(unique_ids)
 
 
 
-library(stringr)
 transects <- str_sub(unique_ids, -1)
 transects[transects=="X"] <- ""
-
 
 
 
